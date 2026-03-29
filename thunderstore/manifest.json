@@ -1,0 +1,9 @@
+{
+    "name": "KeepInventory",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/silsotha/keep-inventory-REPO",
+    "description": "Keep your inventory slot items after death. Die, revive, and your equipped items are still there. Configurable.",
+    "dependencies": [
+        "BepInEx-BepInExPack-5.4.2100"
+    ]
+}
