@@ -9,7 +9,7 @@
 
   <PropertyGroup>
     <BepInExDir>C:\Users\lokee\AppData\Roaming\Thunderstore Mod Manager\DataFolder\REPO\profiles\Default\BepInEx</BepInExDir>
-    <ManagedDir>D:\games\Steam\steamapps\common\REPO\REPO_Data\Managed</ManagedDir>
+    <ManagedDir>D:\lokee\games\Steam\steamapps\common\REPO\REPO_Data\Managed</ManagedDir>
   </PropertyGroup>
 
   <!-- BepInEx + Harmony -->

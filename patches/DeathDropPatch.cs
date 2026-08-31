@@ -112,26 +112,6 @@ namespace KeepInventoryMod.Patches
         }
 
         // ═══════════════════════════════════════════
-        //  Block individual item ForceUnequip RPC
-        //  RPC_ForceUnequip teleports the item and clears the slot
-        // ═══════════════════════════════════════════
-
-        [HarmonyPatch(typeof(ItemEquippable), "RPC_ForceUnequip")]
-        [HarmonyPrefix]
-        static bool BlockItemForceUnequip()
-        {
-            if (!Plugin.KeepItemsOnDeath.Value) return true;
-
-            if (_playerIsDead)
-            {
-                Plugin.Log.LogInfo("[KeepInventory] BLOCKED ItemEquippable.RPC_ForceUnequip");
-                return false;
-            }
-
-            return true;
-        }
-
-        // ═══════════════════════════════════════════
         //  Reset
         // ═══════════════════════════════════════════
 

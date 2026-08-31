@@ -1,54 +1,43 @@
 # KeepInventory
 
-Keep your inventory slot items after death in **R.E.P.O.**
+A simple R.E.P.O. mod that keeps items in your inventory slots after death.
 
-Die, get revived, and your equipped items are still in your inventory slots.
-
-## Features
-
-- **Inventory slots survive death** — items in slots 1/2/3 stay after death and revive
-- **No visual glitches** — death camera, animations, and grab work normally
-- **Multiplayer support** — install on host, recommended for all players
-- **Configurable** — toggle on/off via BepInEx config
-- **Compatible** with MoreInventorySlots and other inventory mods
-
-## What Gets Kept
-
-| Item State | Result |
-|---|---|
-| Items in inventory slots (1/2/3) | ✅ Kept after death |
-| Item held in hand (physics grab) | ❌ Drops normally |
-
-The physically held item cannot be preserved due to how R.E.P.O. handles death physics and camera transitions. All items stored in your inventory slots are safe.
+Items held in your hands will still drop normally.
 
 ## Installation
 
-### With mod manager (r2modman / Thunderstore Mod Manager)
-1. Search for **KeepInventory** in the mod browser
-2. Click **Install**
-3. Launch the game through the mod manager
+Install through **r2modman / Thunderstore Mod Manager**, or place `KeepInventoryMod.dll` in:
 
-### Manual
-1. Install [BepInEx 5.x](https://thunderstore.io/c/repo/p/BepInEx/BepInExPack/)
-2. Place `KeepInventoryMod.dll` into `BepInEx/plugins/`
-3. Launch the game
+```text
+BepInEx/plugins/
+```
+
+Requires BepInEx 5.x.
 
 ## Configuration
 
-After first launch, edit `BepInEx/config/com.mods.keepinventory.cfg`:
+The mod is enabled by default.
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `KeepItemsOnDeath` | `true` | Keep inventory slot items on death |
+Config file:
+
+```text
+BepInEx/config/com.mods.keepinventory.cfg
+```
+
+`KeepItemsOnDeath` — enables or disables inventory protection.
 
 ## Multiplayer
 
-- Install on the **host** for the mod to work
-- Recommended: all players install for full compatibility
-- Works in singleplayer without any restrictions
+Works in multiplayer. Installing the mod on the host is recommended.
 
-## Troubleshooting
+## Building
 
-- **Items still disappear** — make sure the mod is installed on the host
-- **Mod not loading** — check `BepInEx/LogOutput.log` for `[KeepInventory]` lines
-- **Breaks after game update** — method names may have changed, open an issue on GitHub
+```bash
+dotnet build -c Release
+```
+
+Update the local BepInEx and R.E.P.O. assembly paths in `KeepInventoryMod.csproj` before building.
+
+## License
+
+MIT
